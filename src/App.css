@@ -23,13 +23,13 @@ h1 {
   align-items: center;
 }
 .container {
-  width: 1024px;
+  width: 100%;
   margin: auto;
   justify-content: center;
 }
 
 .result > div {
-  width: 250px;
+  width: 25%;
   background-color: #f2f2f2;
   padding: 30px;
   border-radius: 5px;
@@ -38,7 +38,7 @@ h1 {
   margin-bottom: 20px;
 }
 .backbtn {
-  width: 250px;
+  width: 25%;
   outline: none;
   height: 45px;
   box-sizing: border-box;
