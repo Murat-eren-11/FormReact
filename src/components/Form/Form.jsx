@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./Form.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Form = (props) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
     <>
@@ -35,23 +37,33 @@ const Form = (props) => {
           onChange={(e) => props.setEmail(e.target.value)}
         />
         <span>Password</span>
-        <div>
+        <div className="password">
           <input
             className={!passwordsMatch && formSubmitted ? "error" : ""}
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="123456"
             value={props.password}
             onChange={(e) => props.setPassword(e.target.value)}
           />
+          <FontAwesomeIcon
+            className="icon"
+            icon={showPassword ? "eye-slash" : "eye"}
+            onClick={() => setShowPassword((prevState) => !prevState)}
+          />
         </div>
         <span>Confirm your password</span>
-        <div>
+        <div className="password">
           <input
             className={formSubmitted && !passwordsMatch ? "error" : ""}
-            type="password"
+            type={showConfirmPassword ? "text" : "password"}
             placeholder="123456"
             value={props.confirmPassword}
             onChange={(e) => props.setConfirmPassword(e.target.value)}
+          />
+          <FontAwesomeIcon
+            className="icon"
+            icon={showConfirmPassword ? "eye-slash" : "eye"}
+            onClick={() => setShowConfirmPassword((prevState) => !prevState)}
           />
         </div>
         <span

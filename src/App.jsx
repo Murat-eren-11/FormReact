@@ -3,6 +3,9 @@ import "./App.css";
 import Form from "./components/Form/Form";
 import StepTwo from "./components/StepTwo/StepTwo";
 import Footer from "./components/Footer/Footer";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+library.add(faEye, faEyeSlash);
 
 function App() {
   const [name, setName] = useState("");
