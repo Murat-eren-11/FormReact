@@ -12,6 +12,10 @@ const StepTwo = (props) => {
           className="backbtn"
           type="submit"
           value="Edit your information"
+          onClick={(e) => {
+            e.preventDefault();
+            props.onSubmit(false);
+          }}
         />
       </div>
     </>

@@ -17,7 +17,12 @@ function App() {
   return (
     <div className="container">
       {formSubmitted ? (
-        <StepTwo name={name} email={email} password={password} />
+        <StepTwo
+          name={name}
+          email={email}
+          password={password}
+          onSubmit={setFormSubmitted}
+        />
       ) : (
         <Form
           name={name}
